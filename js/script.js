@@ -1,13 +1,33 @@
 
 function applyFilters() {
-    const producer = document.getElementById('producerFilter').value;
-    const company = document.getElementById('companyFilter').value;
-    const location = document.getElementById('locationFilter').value;
-    const startDate = document.getElementById('startDate').value;
-    const endDate = document.getElementById('endDate').value;
-
-    // Simulate metric updates
-    document.getElementById('leads').textContent = 'Leads: ' + Math.floor(Math.random() * 100);
-    document.getElementById('quotes').textContent = 'Quotes: ' + Math.floor(Math.random() * 50);
-    document.getElementById('policies').textContent = 'Policies: ' + Math.floor(Math.random() * 30);
+    document.getElementById("leads").innerText = "120";
+    document.getElementById("quotes").innerText = "85";
+    document.getElementById("policies").innerText = "45";
 }
+
+const quoteCtx = document.getElementById('quoteChart').getContext('2d');
+const quoteChart = new Chart(quoteCtx, {
+    type: 'line',
+    data: {
+        labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
+        datasets: [{
+            label: 'Quotes',
+            data: [20, 25, 20, 20],
+            borderColor: 'blue',
+            fill: false
+        }]
+    }
+});
+
+const conversionCtx = document.getElementById('conversionChart').getContext('2d');
+const conversionChart = new Chart(conversionCtx, {
+    type: 'bar',
+    data: {
+        labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
+        datasets: [{
+            label: 'Conversion Rate (%)',
+            data: [30, 35, 40, 45],
+            backgroundColor: 'green'
+        }]
+    }
+});

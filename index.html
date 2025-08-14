@@ -3,53 +3,43 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Sales Dashboard - Andres Suarez</title>
+    <title>Sales Dashboard</title>
     <link rel="stylesheet" href="css/style.css">
-    <script src="js/script.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <header>
         <h1>Sales Dashboard</h1>
     </header>
+
     <section class="filters">
-        <label>Producer:
-            <select id="producerFilter">
-                <option value="All">All</option>
-                <option value="Andres Suarez">Andres Suarez</option>
-                <option value="Team A">Team A</option>
-            </select>
-        </label>
-        <label>Company:
-            <select id="companyFilter">
-                <option value="All">All</option>
-                <option value="Urus Insurance">Urus Insurance</option>
-                <option value="Partner Co">Partner Co</option>
-            </select>
-        </label>
-        <label>Location:
-            <select id="locationFilter">
-                <option value="All">All</option>
-                <option value="Miami">Miami</option>
-                <option value="Orlando">Orlando</option>
-            </select>
-        </label>
-        <label>Date Range:
-            <input type="date" id="startDate"> to <input type="date" id="endDate">
-        </label>
+        <label>Producer: <input type="text" id="producer"></label>
+        <label>Company: <input type="text" id="company"></label>
+        <label>Location: <input type="text" id="location"></label>
+        <label>Date Range: <input type="date" id="start"> to <input type="date" id="end"></label>
         <button onclick="applyFilters()">Apply Filters</button>
     </section>
+
     <section class="metrics">
-        <div class="metric" id="leads">Leads: 0</div>
-        <div class="metric" id="quotes">Quotes: 0</div>
-        <div class="metric" id="policies">Policies: 0</div>
+        <div class="metric"><h3>Leads</h3><p id="leads">0</p></div>
+        <div class="metric"><h3>Quotes</h3><p id="quotes">0</p></div>
+        <div class="metric"><h3>Policies</h3><p id="policies">0</p></div>
     </section>
+
+    <section class="charts">
+        <h2>Quote Pacing</h2>
+        <canvas id="quoteChart" width="400" height="200"></canvas>
+        <h2>Conversion Rate</h2>
+        <canvas id="conversionChart" width="400" height="200"></canvas>
+    </section>
+
     <section class="images">
         <h2>Uploaded Images</h2>
-        <div class="image-gallery">
-            <img src="assets/UploadedImage0.jpg" alt="Image 0">
-            <img src="assets/UploadedImage1.jpg" alt="Image 1">
-            <img src="assets/UploadedImage2.jpg" alt="Image 2">
-        </div>
+        <img src="assets/UploadedImage0.jpg" alt="Image 0">
+        <img src="assets/UploadedImage1.jpg" alt="Image 1">
+        <img src="assets/UploadedImage2.jpg" alt="Image 2">
     </section>
+
+    <script src="js/script.js"></script>
 </body>
 </html>
