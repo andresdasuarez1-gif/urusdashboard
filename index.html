@@ -3,34 +3,53 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Sales Dashboard</title>
+    <title>Sales Dashboard - Andres Suarez</title>
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" defer></script>
 </head>
 <body>
     <header>
         <h1>Sales Dashboard</h1>
     </header>
     <section class="filters">
-        <h2>Filters</h2>
-        <label for="producer">Producer:</label>
-        <select id="producer"><option>All</option></select>
-        <label for="company">Company:</label>
-        <select id="company"><option>All</option></select>
-        <label for="location">Location:</label>
-        <select id="location"><option>All</option></select>
-        <label for="date">Date Range:</label>
-        <input type="date" id="start"> to <input type="date" id="end">
+        <label>Producer:
+            <select id="producerFilter">
+                <option value="All">All</option>
+                <option value="Andres Suarez">Andres Suarez</option>
+                <option value="Team A">Team A</option>
+            </select>
+        </label>
+        <label>Company:
+            <select id="companyFilter">
+                <option value="All">All</option>
+                <option value="Urus Insurance">Urus Insurance</option>
+                <option value="Partner Co">Partner Co</option>
+            </select>
+        </label>
+        <label>Location:
+            <select id="locationFilter">
+                <option value="All">All</option>
+                <option value="Miami">Miami</option>
+                <option value="Orlando">Orlando</option>
+            </select>
+        </label>
+        <label>Date Range:
+            <input type="date" id="startDate"> to <input type="date" id="endDate">
+        </label>
+        <button onclick="applyFilters()">Apply Filters</button>
     </section>
     <section class="metrics">
-        <h2>Key Metrics</h2>
-        <div class="metric">Total Leads: <span id="leads">0</span></div>
-        <div class="metric">Quotes Sent: <span id="quotes">0</span></div>
-        <div class="metric">Conversion Rate: <span id="conversion">0%</span></div>
+        <div class="metric" id="leads">Leads: 0</div>
+        <div class="metric" id="quotes">Quotes: 0</div>
+        <div class="metric" id="policies">Policies: 0</div>
     </section>
-    <section class="charts">
-        <h2>Charts</h2>
-        <canvas id="chart1" width="400" height="200"></canvas>
+    <section class="images">
+        <h2>Uploaded Images</h2>
+        <div class="image-gallery">
+            <img src="assets/UploadedImage0.jpg" alt="Image 0">
+            <img src="assets/UploadedImage1.jpg" alt="Image 1">
+            <img src="assets/UploadedImage2.jpg" alt="Image 2">
+        </div>
     </section>
-    <script src="js/script.js"></script>
 </body>
 </html>
