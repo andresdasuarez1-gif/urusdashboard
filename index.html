@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,7 +7,30 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <h1>Welcome to the Sales Dashboard</h1>
+    <header>
+        <h1>Sales Dashboard</h1>
+    </header>
+    <section class="filters">
+        <h2>Filters</h2>
+        <label for="producer">Producer:</label>
+        <select id="producer"><option>All</option></select>
+        <label for="company">Company:</label>
+        <select id="company"><option>All</option></select>
+        <label for="location">Location:</label>
+        <select id="location"><option>All</option></select>
+        <label for="date">Date Range:</label>
+        <input type="date" id="start"> to <input type="date" id="end">
+    </section>
+    <section class="metrics">
+        <h2>Key Metrics</h2>
+        <div class="metric">Total Leads: <span id="leads">0</span></div>
+        <div class="metric">Quotes Sent: <span id="quotes">0</span></div>
+        <div class="metric">Conversion Rate: <span id="conversion">0%</span></div>
+    </section>
+    <section class="charts">
+        <h2>Charts</h2>
+        <canvas id="chart1" width="400" height="200"></canvas>
+    </section>
     <script src="js/script.js"></script>
 </body>
 </html>
